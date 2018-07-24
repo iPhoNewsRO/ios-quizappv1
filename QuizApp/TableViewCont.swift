@@ -12,9 +12,9 @@ import RealmSwift
 class TableViewCont: UITableViewController {
 
     
-    var titles = [String]()
-    var categories = [String]()
-    var rowId = 0
+    @objc var titles = [String]()
+    @objc var categories = [String]()
+    @objc var rowId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,13 +101,13 @@ class TableViewCont: UITableViewController {
     }
     */
     
-    func query(){
+    @objc func query(){
         
         let realm = try! Realm()
         
-        let allData = realm.objects(DatabaseModel)
+        let allData = realm.objects(DatabaseModel.self)
         
-        var byName = allData.sorted(byKeyPath: "id", ascending: true)
+        let byName = allData.sorted(byKeyPath: "id", ascending: true)
         
         for quiz in byName{
             
@@ -123,7 +123,7 @@ class TableViewCont: UITableViewController {
         
         if segue.identifier == "cellSegue" {
             
-            var destVC : ViewController = segue.destination as! ViewController
+            let destVC : ViewController = segue.destination as! ViewController
 //dirty imple coz id is not necessarily the index of teble view cell
          destVC.quizId = rowId
         }

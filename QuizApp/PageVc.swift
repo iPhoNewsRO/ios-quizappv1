@@ -22,7 +22,7 @@ class PageVc: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 // 
     
     
-     var viewControllerList:[UIViewController] = {
+     @objc var viewControllerList:[UIViewController] = {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         

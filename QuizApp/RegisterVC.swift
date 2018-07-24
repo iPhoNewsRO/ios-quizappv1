@@ -95,7 +95,7 @@ class RegisterVC: UIViewController {
     }
     
     
-    func displayMyAlertMessage(userMessage:String)
+    @objc func displayMyAlertMessage(userMessage:String)
     {
         
         let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert);

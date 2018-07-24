@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var correctLabel: UILabel!
     
-    var correctAnswer = 0
-    var lastRndNum = 0
+    @objc var correctAnswer = 0
+    @objc var lastRndNum = 0
     
-    var quizId = 0
-    var count = 1
-    var score = 0
+    @objc var quizId = 0
+    @objc var count = 1
+    @objc var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -197,7 +197,7 @@ class ViewController: UIViewController {
         
     }
     
-    func randomQuestionDatabase(){
+    @objc func randomQuestionDatabase(){
         
         var rndNum = arc4random() % 5
         
@@ -205,9 +205,9 @@ class ViewController: UIViewController {
         
         let realm = try! Realm()
         
-        let allData = realm.objects(DatabaseModel)
+        let allData = realm.objects(DatabaseModel.self)
         
-        var filtered = allData.filter("id = \(quizId)")
+        let filtered = allData.filter("id = \(quizId)")
         
         QuestionLabel.text = filtered[0].q1
         Button1.setTitle(filtered[0].a1q1, for: UIControlState.normal)
@@ -225,16 +225,16 @@ class ViewController: UIViewController {
     }
     
     
-    func directQuestion(){
+    @objc func directQuestion(){
         
         nextButton.isHidden = true
         correctLabel.isHidden = true
         
         let realm = try! Realm()
         
-        let allData = realm.objects(DatabaseModel)
+        let allData = realm.objects(DatabaseModel.self)
         
-        var filtered = allData.filter("id = \(quizId)")
+        let filtered = allData.filter("id = \(quizId)")
         
         
         if (count == 6) {
@@ -313,7 +313,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destVC : ScoreVC = segue.destination as! ScoreVC
+        let destVC : ScoreVC = segue.destination as! ScoreVC
         
         destVC.score = score
         

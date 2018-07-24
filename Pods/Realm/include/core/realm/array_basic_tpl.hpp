@@ -63,12 +63,20 @@ inline MemRef BasicArray<T>::create_array(Array::Type type, bool context_flag, s
     REALM_ASSERT(!context_flag);
     MemRef mem = create_array(init_size, allocator);
     if (init_size) {
+        // GCC 7.x emits a false-positive strict aliasing warning for this code. Suppress it, since it
+        // clutters up the build output.  See <https://github.com/realm/realm-core/issues/2665> for details.
+        REALM_DIAG_PUSH();
+        REALM_DIAG(ignored "-Wstrict-aliasing");
+
         BasicArray<T> tmp(allocator);
         tmp.init_from_mem(mem);
-        for (size_t i = 0; i < init_size; ++i) {
-            tmp.set(i, value);
+        T* p = reinterpret_cast<T*>(tmp.m_data);
+        T* end = p + init_size;
+        while (p < end) {
+            *p++ = value;
         }
-        return tmp.get_mem();
+
+        REALM_DIAG_POP();
     }
     return mem;
 }

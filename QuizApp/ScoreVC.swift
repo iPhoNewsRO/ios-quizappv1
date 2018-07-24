@@ -13,7 +13,7 @@ class ScoreVC: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
 
-    var score = 0
+    @objc var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

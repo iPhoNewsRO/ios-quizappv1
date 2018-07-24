@@ -30,11 +30,11 @@ class CreateQuizFinal: UIViewController {
     
     @IBOutlet weak var save: UIButton!
     
-    var titleText = String()
-    var categoryText = String()
-    var counter = 0
-    var counter2 = 0
-    var correctOption = "1"
+    @objc var titleText = String()
+    @objc var categoryText = String()
+    @objc var counter = 0
+    @objc var counter2 = 0
+    @objc var correctOption = "1"
     var data = Model()
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class CreateQuizFinal: UIViewController {
     }
     
     
-    func saveQuestion(){
+    @objc func saveQuestion(){
         
         
         
@@ -107,7 +107,7 @@ class CreateQuizFinal: UIViewController {
     
     }
     
-    func clearFields(){
+    @objc func clearFields(){
         questionTF.text = ""
         option1TF.text = ""
         option2TF.text = ""
@@ -221,7 +221,7 @@ class CreateQuizFinal: UIViewController {
         
         saveQuestion()
         
-        self.delete(Any?)
+        self.delete(Any?.self)
     }
     
 }

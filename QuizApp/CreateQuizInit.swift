@@ -18,7 +18,7 @@ class CreateQuizInit: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destVC : CreateQuizFinal = segue.destination as! CreateQuizFinal
+        let destVC : CreateQuizFinal = segue.destination as! CreateQuizFinal
         
         destVC.titleText = titleTextField.text!
         

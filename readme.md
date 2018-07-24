@@ -1,12 +1,13 @@
 # [iOS] Quiz App!
 
-A fully functional quiz app made using Swift 3.
+A fully functional quiz app made using Swift 4 and Realm
 
 ## Features
 
 1. Clean, well formatted code
 2. Uses Realm Database for storage
 3. Can be scaled to Firebase or other databases like AWS DBs
+4. Great for begginers 
 
 ### Screenshots
 
@@ -20,27 +21,6 @@ A fully functional quiz app made using Swift 3.
 
 <img src="https://camo.githubusercontent.com/9d43d845ed3bc90520c990c4b8b020467d2a56ff/68747470733a2f2f692e696d6775722e636f6d2f345a4d44456e372e706e67" data-canonical-src="https://i.imgur.com/4ZMDEn7.png" width=“400” height=“715”/>
 
-![Intro](http://img4.imagetitan.com/img4/7bePvGKuw4iN4Qu/16/16_intro1.png)
-
-
-![Login](http://img4.imagetitan.com/img4/7bePvGKuw4iN4Qu/16/16_login1.png)
-
-![Stuff](http://img4.imagetitan.com/img4/7bePvGKuw4iN4Qu/16/16_reg2.png)
-
-![Stuff](http://img4.imagetitan.com/img4/7bePvGKuw4iN4Qu/16/16_reg1.png)
-
-```
-:)
-```
-
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [XCode](https://google.com/) 
 
 ## Contributing
 
@@ -49,15 +29,8 @@ Please read [CONTRIBUTING.md](https://gist.github.com/nitishdash) for details on
 ## Authors
 
 * **Nitish Dash** - *Initial work* - [Nitish](https://github.com/nitishdash)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Radu Ursache** - *Swift 4 conversion, fixes and updates* - [Radu](https://github.com/iPhoNewsRO)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
